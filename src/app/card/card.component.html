@@ -1,0 +1,26 @@
+<li class="post" [@slideInOut] >
+  <div>
+    <div class="card-header">
+      <div >
+        <i *ngIf="!Post.read" class="material-icons read-cirlce">
+          lens
+        </i>
+      </div>
+      <div><span>{{Post?.authorFullname}}</span></div>
+      <div><span>{{Post?.createdTimeAgo}}</span></div>
+    </div>
+    <div class="card-main-content">
+      <img src="{{Post?.thumbnail}}">
+      <div class="title">{{Post?.title}}</div>
+    </div>
+    <div class="card-footer">
+      <div class="dismiss-btn" (click)="test(Post)">
+        <i class="material-icons red-button">
+          cancel
+        </i>
+        <span class="dismiss-btn-text">Dismiss post</span>
+      </div>
+      <div>Comments {{Post?.numComments}}</div>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,5 @@
+<div>
+  <ul *ngFor="let post of Posts">
+    <app-card [Post]="post"  (click)="readPost(post)" (dissmissPost)="dissmissPost($event)"></app-card>
+  </ul>
+</div>

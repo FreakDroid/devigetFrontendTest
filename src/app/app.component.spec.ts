@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'devigetFrontendTest'`, () => {
+  it(`should have as title 'frontend-test-angular'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('devigetFrontendTest');
+    expect(app.title).toEqual('frontend-test-angular');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to devigetFrontendTest!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to frontend-test-angular!');
   });
 });

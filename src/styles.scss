@@ -1,1 +1,16 @@
+body{
+  margin: 0;
+  height:100vh;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
 /* You can add global styles to this file, and also import other style files */

@@ -2,10 +2,8 @@
 <div class="body">
   <div class="post-container">
     <div class="post-list-title"><p>Reddit Posts</p></div>
-    <app-list-cards class="postList" [Posts]="Post"></app-list-cards>
+    <app-list-cards class="postList" [Posts]="Posts"></app-list-cards>
     <div (click)="dissmissPost()" class="dismiss-all-post"><p class="footer">Dismiss All</p></div>
   </div>
-  <div class="post-detail">
-    dasfdsfsaddsff
-  </div>
+  <app-card-detail class="post-detail" [Post]="PostDetail" *ngIf="showDetailPost"></app-card-detail>
 </div>

@@ -8,13 +8,15 @@ import { CardComponent } from './card/card.component';
 import { ListCardsComponent } from './list-cards/list-cards.component';
 import { RedditListService } from './service/reddit-list.service';
 import {HttpClientModule} from '@angular/common/http';
+import { CardDetailComponent } from './card-detail/card-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    ListCardsComponent
+    ListCardsComponent,
+    CardDetailComponent
   ],
   imports: [
     BrowserModule,

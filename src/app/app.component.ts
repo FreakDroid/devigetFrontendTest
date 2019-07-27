@@ -10,7 +10,9 @@ import {Post} from './model/Post';
 })
 export class AppComponent implements OnInit {
   title = 'frontend-test-angular';
-  Post: Array<Post>;
+  Posts: Array<Post>;
+  PostDetail: Post;
+  showDetailPost = false;
 
   constructor(private redditListService: RedditListService) {
   }
@@ -21,13 +23,19 @@ export class AppComponent implements OnInit {
 
     this.redditListService.getTopPost.subscribe(Post => {
       console.log(Post);
-      this.Post = Post;
+      this.Posts = Post;
+    });
+
+    this.redditListService.getDetailPost.subscribe(post => {
+      this.PostDetail = post;
+      this.showDetailPost = true;
     });
   }
 
   dissmissPost() {
     const postFiltered = Array<Post>();
     this.redditListService.updatePosts(postFiltered);
+    this.showDetailPost = false;
   }
 
 }

@@ -17,6 +17,7 @@ export class RedditListService {
   public url = globalParameters.redditURL;
   public redditPost: Subject<Array<Post>> = new Subject<Array<Post>>();
 
+  public redditDetailPost: Subject<Post> = new Subject<Post>();
   constructor(private http: HttpClient) {
   }
 
@@ -24,8 +25,16 @@ export class RedditListService {
     return this.redditPost.asObservable();
   }
 
+  get getDetailPost() {
+    return this.redditDetailPost.asObservable();
+  }
+
   updatePosts(posts) {
     this.redditPost.next(posts);
+  }
+
+  detailPost(post) {
+    this.redditDetailPost.next(post);
   }
 
   async getAndTransformTopPost() {

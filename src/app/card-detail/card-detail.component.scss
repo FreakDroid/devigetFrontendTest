@@ -1,0 +1,22 @@
+.detail-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+.img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img{
+    width: 21em;
+    height: 21em;
+  }
+}
+
+.author, .post-title{
+  display: flex;
+  margin-left: 20px;
+}

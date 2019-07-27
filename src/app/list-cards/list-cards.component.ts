@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {RedditListService} from '../service/reddit-list.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Post} from '../model/Post';
 
 @Component({
   selector: 'app-list-cards',
@@ -34,6 +35,7 @@ export class ListCardsComponent implements OnInit {
       this.PostList.splice(postFiltered, 1, postToUpdate);
       this.redditListService.updatePosts(this.PostList);
     }
+    this.redditListService.detailPost(postToUpdate);
   }
 
   dissmissPost(postToFilter) {

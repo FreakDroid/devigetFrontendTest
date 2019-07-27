@@ -1,6 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="body">
-  <div class="post-container">
+<div class="body"  (swipe)="onSwipe($event)">
+  <div class="post-container" [ngClass]="{
+    'show':swipeMobile === true,
+    'hide':swipeMobile === false}">
     <div class="post-list-title"><p>Reddit Posts</p></div>
     <app-list-cards class="postList" [Posts]="Posts"></app-list-cards>
     <div (click)="dissmissPost()" class="dismiss-all-post"><p class="footer">Dismiss All</p></div>

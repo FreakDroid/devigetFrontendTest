@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RedditListService} from './service/reddit-list.service';
 import {Post} from './model/Post';
-
+import {DeviceDetectorService} from 'ngx-device-detector';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,13 @@ export class AppComponent implements OnInit {
   PostDetail: Post;
   showDetailPost = false;
 
-  constructor(private redditListService: RedditListService) {
+  swipeMobile = true;
+
+
+  isMobile = this.deviceService.isMobile();
+  isTablet = this.deviceService.isTablet();
+
+  constructor(private redditListService: RedditListService, private deviceService: DeviceDetectorService) {
   }
 
   ngOnInit() {
@@ -30,6 +36,7 @@ export class AppComponent implements OnInit {
       this.PostDetail = post;
       this.showDetailPost = true;
     });
+
   }
 
   dissmissPost() {
@@ -38,4 +45,11 @@ export class AppComponent implements OnInit {
     this.showDetailPost = false;
   }
 
+  onSwipe(evt) {
+
+    if (this.isMobile) {
+      console.log('entre ', this.isMobile);
+      const x = Math.abs(evt.deltaX) > 40 ? (evt.deltaX > 0 ? (this.swipeMobile = true) : this.swipeMobile = false) : '';
+    }
+  }
 }

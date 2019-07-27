@@ -30,6 +30,7 @@ export class ListCardsComponent implements OnInit {
 
   readPost(postToUpdate) {
     if (postToUpdate.read === false) {
+      console.log(postToUpdate.id);
       const postFiltered = this.PostList.findIndex(post => post.id === postToUpdate.id);
       postToUpdate.read = true;
       this.PostList.splice(postFiltered, 1, postToUpdate);

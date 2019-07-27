@@ -1,5 +1,5 @@
 <div>
-  <ul *ngFor="let post of Posts">
+  <ul *ngFor="let post of Posts" [@fadeInOut]>
     <app-card [Post]="post"  (click)="readPost(post)" (dissmissPost)="dissmissPost($event)"></app-card>
   </ul>
 </div>

@@ -5,7 +5,15 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 @Component({
   selector: 'app-list-cards',
   templateUrl: './list-cards.component.html',
-  styleUrls: ['./list-cards.component.scss']
+  styleUrls: ['./list-cards.component.scss'],
+  animations: [
+    trigger('fadeInOut', [
+      state('void', style({
+        opacity: 0
+      })),
+      transition('void <=> *', animate(1000)),
+    ])
+  ]
 })
 export class ListCardsComponent implements OnInit {
   @Input() Posts;
@@ -20,10 +28,12 @@ export class ListCardsComponent implements OnInit {
   }
 
   readPost(postToUpdate) {
-    const postFiltered = this.PostList.findIndex(post => post.id === postToUpdate.id);
-    postToUpdate.read = true;
-    this.PostList.splice(postFiltered, 1, postToUpdate);
-    this.redditListService.updatePosts(this.PostList);
+    if (postToUpdate.read === false) {
+      const postFiltered = this.PostList.findIndex(post => post.id === postToUpdate.id);
+      postToUpdate.read = true;
+      this.PostList.splice(postFiltered, 1, postToUpdate);
+      this.redditListService.updatePosts(this.PostList);
+    }
   }
 
   dissmissPost(postToFilter) {

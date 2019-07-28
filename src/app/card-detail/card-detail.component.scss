@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 
   img{
     width: 21em;
@@ -19,4 +20,12 @@
 .author, .post-title{
   display: flex;
   margin-left: 20px;
+}
+
+
+@media screen and (max-width: 830px) {
+  img{
+    width: 21em;
+    height: 10em;
+  }
 }

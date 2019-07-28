@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
 
 
   isMobile = this.deviceService.isMobile();
-  isTablet = this.deviceService.isTablet();
 
   constructor(private redditListService: RedditListService, private deviceService: DeviceDetectorService) {
   }

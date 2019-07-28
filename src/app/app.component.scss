@@ -80,3 +80,12 @@
     transform: translateX(-156px);
   }
 }
+
+
+@media screen and (max-width: 450px) {
+
+  .post-detail {
+    width: 42%;
+    transform: translateX(-103px);
+  }
+}

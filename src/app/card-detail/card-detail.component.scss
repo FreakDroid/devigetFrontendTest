@@ -24,8 +24,11 @@
 
 
 @media screen and (max-width: 830px) {
-  img{
-    width: 21em;
-    height: 10em;
+  .img{
+    img{
+    width: 21em !important;
+    height: 10em !important;
+
+    }
   }
 }

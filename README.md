@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
+
+For this project I have used the following libs:
+
+- HammerJS: To capture gestures, basically it was used to hide the list panel for mobile devices.
+- UUID: I generated an Id to track more easier the post that you've read or dismissed.
+- Moment: To convert the time to text.
+- ngx-device-detector: To detect whether the device is a mobile or PC.
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
